@@ -28,20 +28,7 @@ class MainActivityTest {
 
     @Test
     fun mainActivityTest() {
-        val materialButton = onView(
-            allOf(
-                withId(R.id.button), withText("Button"),
-                childAtPosition(
-                    childAtPosition(
-                        withId(android.R.id.content),
-                        0
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
-        materialButton.perform(click())
+        onView(withId(R.id.button)).perform(click())
 
         val textView = onView(
             allOf(
