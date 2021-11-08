@@ -10,6 +10,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setBindings()
+
+        binding.button.setOnClickListener {
+            binding.textView.text = "Kotlin"
+        }
     }
 
     private fun setBindings() {
