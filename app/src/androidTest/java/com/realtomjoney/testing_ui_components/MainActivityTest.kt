@@ -8,6 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
+import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -24,5 +25,8 @@ class MainActivityTest {
     fun mainActivityTest() {
         onView(withId(R.id.button)).perform(click())
         onView(withId(R.id.textView)).check(matches(withText("Kotlin")))
+
+        val textView = onView(withId(R.id.textView))
+        Assert.assertNotNull(textView)
     }
 }
