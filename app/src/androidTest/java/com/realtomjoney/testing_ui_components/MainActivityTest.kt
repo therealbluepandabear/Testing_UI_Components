@@ -29,15 +29,7 @@ class MainActivityTest {
     @Test
     fun mainActivityTest() {
         onView(withId(R.id.button)).perform(click())
-
-        val textView = onView(
-            allOf(
-                withId(R.id.textView), withText("Kotlin"),
-                withParent(withParent(withId(android.R.id.content))),
-                isDisplayed()
-            )
-        )
-        textView.check(matches(withText("Kotlin")))
+        onView(withId(R.id.textView)).check(matches(withText("Kotlin")))
     }
 
     private fun childAtPosition(
